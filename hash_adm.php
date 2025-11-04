@@ -1,6 +1,6 @@
 <?php
-// criar_admin.php
-require 'config.php'; // seu arquivo de conexão PDO
+
+require 'config.php'; 
 
 $nome = 'Carol';
 $email = 'carol@gmail.com';
