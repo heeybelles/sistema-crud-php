@@ -70,7 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body>
 <header>
-    <a href="dashboard.php" class="logo">Nome - Produtos</a>
+    <a href="dashboard.php" class="logo">Aura Belle - Produtos</a>
     
     <div class="header-center">
         <ul class="nav-center">
