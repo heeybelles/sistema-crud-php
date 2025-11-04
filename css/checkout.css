@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+body {
+    background-color: #faf9f9;
+    color: #333;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background: linear-gradient(to right, #db43ba, #34a4f4);
+    position: relative;
+}
+
+.logo {
+    font-weight: 700;
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    z-index: 2;
+}
+
+.nav-center {
+    position: absolute;
+    left: 76%;
+    transform: translateX(-50%);
+    display: flex;
+    list-style: none;
+    z-index: 1;
+}
+
+.nav-center li {
+    margin: 0 15px;
+}
+
+.nav-center li a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-center li a:hover {
+    color: #c1e4e6ff;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    object-fit: cover;
+}
+
+.username {
+    color: #fff;
+    font-weight: 600;
+}
+
+.btnLogin {
+    background: linear-gradient(#fff, #ece8e8ff) padding-box,
+                linear-gradient(to right, #d975a0ff, #4ea9ebff) border-box;
+    padding: 8px 24px;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    color: #e74b8f;
+    font-weight: 600;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.btnLogin:hover {
+    background: linear-gradient(to right, #dc84aaff, #50b1f7) padding-box,
+                linear-gradient(to right, #e091b3ff, #50b1f7) border-box;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.checkout-container {
+    max-width: 500px;
+    margin: 60px auto;
+    padding: 20px;
+}
+
+.checkout-card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    padding: 30px;
+    text-align: center;
+}
+
+.checkout-card img.checkout-img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin: 15px 0;
+}
+
+.checkout-title {
+    font-size: 1.8em;
+    color: #a259ff;
+    margin-bottom: 10px;
+}
+
+.btnFinalizar {
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: linear-gradient(135deg, #a259ff, #fbc2eb);
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btnFinalizar:hover {
+    background: linear-gradient(135deg, #8b42e8, #faa0d7);
+    transform: scale(1.05);
+}
+
+.historico {
+    margin-top: 60px;
+}
+
+.title-historico {
+    font-size: 1.6em;
+    color: #a259ff;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
+.container-historico {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px; 
+}
+
+.container-historico {
+    display: flex;
+    flex-wrap: nowrap; 
+    justify-content: flex-start; 
+    gap: 20px; 
+    padding: 10px 0;
+}
+
+.card-historico {
+    flex: 0 0 auto; 
+    width: 280px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    text-align: center;
+    padding: 20px;
+    transition: 0.3s;
+}
+
+.card-historico:hover {
+    transform: translateY(-5px);
+}
+
+.card-historico img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.card-historico h4 {
+    color: #333;
+    margin: 10px 0 5px;
+}
+
+.card-historico p {
+    font-size: 0.9em;
+    color: #555;
+}
+
+.card-historico .preco {
+    display: block;
+    color: #a259ff;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.data-compra {
+    font-size: 0.85em;
+    color: #777;
+    margin-top: 8px;
+}
+
+
+.erro, .sem-compras {
+    text-align: center;
+    color: #777;
+    font-weight: 500;
+}
+
+footer {
+    background-color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 80px;
+    color: #777;
+    border-top: 1px solid #eee;
+}
+
+

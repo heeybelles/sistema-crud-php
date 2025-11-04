@@ -1,0 +1,82 @@
+
+/* Header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 5%;
+    background: linear-gradient(to right, #db43ba, #34a4f4);
+    color: #fff;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Menu central */
+.header-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-center {
+    list-style: none;
+}
+
+.nav-center li {
+    display: inline-block;
+    margin: 0 10px;
+    margin-left: 680px;
+}
+
+.nav-center a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 5px; 
+    margin-left: -60px;
+}
+
+.avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    object-fit: cover;
+}
+
+.username {
+    color: #fff;
+    font-weight: 600;
+    margin-right: 18px; 
+    padding: 0;
+}
+
+.user-info .btnSair {
+    padding: 8px 24px;
+    background: linear-gradient(#fff, #ece8e8ff) padding-box,
+                linear-gradient(to right, #d975a0ff, #4ea9ebff) border-box;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    color: #e74b8f;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.user-info .btnSair:hover {
+    background: linear-gradient(to right, #dc84aaff, #50b1f7) padding-box,
+                linear-gradient(to right, #e091b3ff, #50b1f7) border-box;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+

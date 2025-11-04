@@ -1,0 +1,80 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+html, body, div, span, h1, h2, h3, h4, h5, h6, ul, li {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    font-optical-sizing: auto;
+}
+
+body {
+    background-color: rgb(241, 233, 223);
+}
+
+
+h1 {
+    display: flex;
+    font-size: 20px;
+    margin-left: 30%;
+    background: linear-gradient(to right, #ff6b6b, #6bc1ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+p {
+    font-size: 16px;
+    margin: 20px 40px;
+    color: #333;
+}
+
+.link {
+    display: inline-block;
+    margin-top: 10px;
+    color: #7e1f93ff;
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+
+.dashboard-body {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.option-dashboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+  padding: 25px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.option-dashboard:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.figure, h3, .link {
+  margin-bottom: 12px;
+}
+
+.figure {
+  font-size: 28px;
+}
+
+h3 {
+  font-size: 17px;
+  color: #474646dc;
+}

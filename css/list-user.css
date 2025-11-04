@@ -1,0 +1,74 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    font-optical-sizing: auto;
+}
+
+body {
+    background-color: rgb(241, 233, 223);
+}
+
+/* Main */
+h1 {
+    display: flex;
+    font-size: 24px;
+    margin-left: 10%;
+     color: rgb(120, 50, 128);
+}
+
+.btnAddUser:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+.table-users {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+table {
+    width: 80%;
+    max-width: 1000px;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px 10px;
+    text-align: center;
+    vertical-align: middle;
+    border-bottom: 1px solid #eaeaea;
+}
+
+th {
+    background-color: #f0f2f5;
+    color: #333;
+    font-weight: 600;
+}
+
+tr:hover {
+    background-color: #f9f9f9;
+}
+
+.btnEditar, .btnExcluir {
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 10px;
+    color: #fff;
+    margin-left: 8px;
+    transition: box-shadow 0.2s ease;
+}
+
+.btnEditar { background-color: #75cb4b; }
+.btnExcluir { background-color: #cb674b; }
+
+.btnEditar:hover, .btnExcluir:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}

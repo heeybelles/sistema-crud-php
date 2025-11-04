@@ -1,0 +1,560 @@
+/* ===== NAVBAR ===== */
+.navbar {
+  background-color: #fff;
+  margin: 20px;
+  height: 80px;
+  padding: 0.35rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  font-weight: 500;
+  color: #35b3c7;
+  font-size: 24px;
+  transition: 0.3s color;
+}
+
+.login-button {
+  background-color: #35b3c7;
+  color: #fff;
+  font-size: 14px;
+  padding: 8px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: 0.3s background-color;
+}
+
+.login-button:hover {
+  background-color: rgb(22, 131, 137);
+}
+
+.navbar-toggler {
+  border: none;
+  font-size: 1.25rem;
+}
+
+.navbar-toggler:focus,
+.btn-close:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+.nav-link {
+  color: #666777;
+  font-weight: 500;
+  position: relative;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #000;
+}
+
+/* LINHA ANIMADA NO HOVER */
+@media (min-width: 992px) {
+  .nav-link::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: #35b3c7;
+    visibility: hidden;
+    transition: 0.3s ease-in-out;
+  }
+
+  .nav-link:hover::before,
+  .nav-link.active::before {
+    width: 100%;
+    visibility: visible;
+  }
+
+  /* Layout do Navbar no desktop */
+  .navbar .container-fluid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+  }
+
+  .navbar-brand {
+    justify-self: start;
+  }
+
+  .navbar-collapse {
+    justify-self: center;
+  }
+
+  .login-button {
+    justify-self: end;
+  }
+}
+
+/* ===== HERO SECTION ===== */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 88vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  overflow: hidden; 
+}
+
+
+.hero-section .hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.hero-section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5); 
+  z-index: 2;
+}
+
+.hero-section > h1,
+.hero-section > p,
+.hero-section > .hero-button {
+  position: relative;
+  z-index: 4; 
+}
+
+
+.hero-title {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #b1ccd8;
+}
+
+/* Subtítulo */
+.hero-subtitle {
+  font-size: 16px;
+  max-width: 600px;
+  margin-bottom: 20px;
+  color: #fff;
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* Botão */
+.hero-button {
+  background-color: #5f86a3;
+  color: #fff;
+  font-size: 14px;
+  padding: 12px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color 0.3s;
+}
+
+.hero-button:hover {
+  background-color: #3caabd;
+}
+
+
+.about-section {
+  background-color: #e8f3f7;
+  padding: 80px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #30c4ed;
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin-top: 0; 
+}
+.about-section h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.about-section p {
+  max-width: 700px;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  line-height: 1.6;
+}
+/* ===== PRODUTOS ===== */
+.services-section {
+  background-color: #f7fbfc;
+  padding: 80px 0;
+  text-align: center;
+  color: #2b475e;
+}
+
+.services-section h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #3caabd;
+}
+
+.services-section p {
+  max-width: 700px;
+  margin: 0 auto 30px;
+  color: #555;
+}
+
+.services-section .filter-bar {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.services-section select {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: 0.3s;
+}
+
+.services-section select:hover {
+  border-color: #3caabd;
+}
+
+/* Cards de produtos */
+.services-section .card {
+  border: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 16px;
+  transition: transform 0.3s;
+  margin: 15px auto;
+}
+
+.services-section .card:hover {
+  transform: translateY(-5px);
+}
+
+.services-section .btn-primary {
+  background-color: #3caabd;
+  border: none;
+  border-radius: 20px;
+}
+
+.services-section .btn-primary:hover {
+  background-color: #2b8999;
+}
+
+/* ===== AVALIAÇÕES ===== */
+.avaliate-section {
+  background-color: #e8f3f7;
+  padding: 80px 0;
+  text-align: center;
+  color: #2b475e;
+}
+
+.avaliate-section h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #3caabd;
+  margin-bottom: 15px;
+}
+
+.avaliate-section p {
+  max-width: 700px;
+  margin: 0 auto 30px;
+  color: #555;
+}
+
+.avaliate-section .filter-bar {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.avaliate-section select {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.avaliate-section .card {
+  border: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 16px;
+  margin: 0 auto;
+  max-width: 700px;
+}
+
+.star {
+  color: gold;
+  font-size: 18px;
+}
+
+/* ===== CONTATO (RODAPÉ) ===== */
+.contact-section {
+  background-color: #2b475e;
+  color: #fff;
+  padding: 60px 0;
+}
+
+.contact-section h2 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 40px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.contact-section .contact-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 0 60px;
+}
+
+.contact-section .info {
+  max-width: 400px;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.contact-section form {
+  background-color: #fff;
+  color: #333;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  max-width: 400px;
+  flex: 1;
+}
+
+.contact-section .btn-primary {
+  background-color: #3caabd;
+  border: none;
+  border-radius: 20px;
+}
+
+.contact-section .btn-primary:hover {
+  background-color: #2b8999;
+}
+
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 1200px) {
+  .hero-title {
+    font-size: 30px;
+  }
+
+  .hero-subtitle {
+    font-size: 14px;
+    max-width: 500px;
+  }
+
+  .hero-button {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 992px) {
+
+  /* Produtos e Avaliações */
+  .services-section .card,
+  .avaliate-section .card {
+    max-width: 90%;
+    margin: 15px auto;
+  }
+
+  .services-section .filter-bar,
+  .avaliate-section .filter-bar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* Contato */
+  .contact-section .contact-container {
+    flex-direction: column;
+    padding: 0 20px;
+    align-items: center;
+  }
+
+  .contact-section .info,
+  .contact-section form {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Ajuste para imagens dentro dos cards */
+  .services-section .card img,
+  .avaliate-section .card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 16px 16px 0 0;
+  }
+
+  /* Cards: manter o texto dentro e altura mínima */
+  .services-section .card .card-body,
+  .avaliate-section .card .card-body {
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-wrap: break-word;
+  }
+}
+@media (max-width: 576px) {
+  /* ===== HERO ===== */
+  .hero-title {
+    font-size: 24px;
+  }
+
+  .hero-subtitle {
+    font-size: 13px;
+    max-width: 300px;
+  }
+
+  .hero-button {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+
+  /* ===== ABOUT SECTION ===== */
+  .about-section h2 {
+    font-size: 24px;
+  }
+
+  .about-section .card {
+    max-width: 95%;
+    height: auto;
+    flex-direction: column;
+  }
+
+  .about-section .row.g-0 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .about-section .col-md-4,
+  .about-section .col-md-8 {
+    width: 100%;
+  }
+
+  .about-section .col-md-4 img {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 20px auto;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .about-section .card-body {
+    padding: 10px;
+  }
+
+  .about-section .card-text {
+    font-size: 14px;
+  }
+
+  /* ===== Títulos gerais ===== */
+  .services-section h2,
+  .avaliate-section h2,
+  .contact-section h2 {
+    font-size: 26px;
+  }
+
+  /* ===== Textos gerais ===== */
+  .services-section p,
+  .avaliate-section p,
+  .contact-section .info {
+    font-size: 14px;
+  }
+
+  /* ===== FILTER BAR ===== */
+  .services-section .filter-bar,
+  .avaliate-section .filter-bar {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .services-section select,
+  .avaliate-section select {
+    width: 100%;
+  }
+
+  /* ===== CARDS DE PRODUTOS ===== */
+  .services-section .card {
+    max-width: 100%;
+    margin: 10px 0;
+  }
+
+  .services-section .card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 16px 16px 0 0;
+  }
+
+  .services-section .card .card-body {
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  /* ===== CARDS DE AVALIAÇÕES ===== */
+  .avaliate-section .card {
+    max-width: 100%;
+    margin: 10px 0;
+  }
+
+  .avaliate-section .card img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 16px 16px 0 0;
+  }
+
+  .avaliate-section .card .card-body {
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  /* ===== CONTATO ===== */
+  .contact-section .contact-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 15px;
+    gap: 20px;
+  }
+
+  .contact-section form,
+  .contact-section .info {
+    max-width: 100%;
+  }
+}
+
+
