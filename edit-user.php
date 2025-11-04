@@ -75,7 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
   <body>
     <header>
-    <a href="dashboard.php" class="logo">Nome - Usuário</a>
+    <a href="dashboard.php" class="logo">Aura Belle - Usuário</a>
     <div class="header-center">
         <?php if($usuarioLogado['nivel'] === 'admin'): ?>
         <ul class="nav-center">
