@@ -22,7 +22,7 @@ if (isset($_SESSION['usuario_id'])) {
 
 <body>
 <header>
-    <a href="#" class="logo">Nome</a>
+    <a href="#" class="logo">Aura Belle</a>
     
     <div class="header-center">
         <ul class="nav-center">
