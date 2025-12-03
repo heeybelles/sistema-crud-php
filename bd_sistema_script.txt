@@ -1,0 +1,114 @@
+Caso tenha dificuldade de utilizar o meu SQL, porque às vezes o XAMPP buga, pelo menos no meu computador. Utilize o script abaixo.
+
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+-- BANCO DE DADOS
+-- --------------------------------------------------------
+
+CREATE DATABASE IF NOT EXISTS `sistema` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `sistema`;
+
+-- --------------------------------------------------------
+-- Tabela: avaliacao
+-- --------------------------------------------------------
+
+CREATE TABLE `avaliacao` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(100) NOT NULL,
+  `estrelas` int(11) NOT NULL,
+  `comentario` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+INSERT INTO `avaliacao` (`id`, `nome`, `estrelas`, `comentario`) VALUES
+(3, 'Gabi2', 3, 'mais ou menos'),
+(11, 'Ana', 5, 'Perfeitooo'),
+(12, 'Ana', 4, 'Ameii'); -- corrigido id duplicado
+
+-- --------------------------------------------------------
+-- Tabela: usuario
+-- --------------------------------------------------------
+
+CREATE TABLE `usuario` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `senha` varchar(255) NOT NULL,
+  `foto` varchar(255) DEFAULT NULL,
+  `nivel` enum('admin','usuario') NOT NULL DEFAULT 'usuario',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `email` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+INSERT INTO `usuario` (`id`, `nome`, `email`, `senha`, `foto`, `nivel`) VALUES
+(3, 'Gabi2', 'gabi@gmai.com', '$2y$10$2qgxYmZCDWBKyj.lnPeEyeWx6FGxRmvm8j.NOGLHBfQ00j/q8n3SC', 'images/users/6907d20d60d14.PNG', 'usuario'),
+(7, 'Carol', 'carol@gmail.com', '$2y$10$SgCajdTueKrx/5OdO7Qr8OH6/DQ9aow9Y9K.pPk8kEscpNHw/Cbna', 'https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359554_1280.png', 'admin'),
+(9, 'Dudaa', 'du@gmail.com', '$2y$10$jHUWI5GXAj/kmjhIOiPYde93sYSdc0Gzne3YlrxqyzlUSR0WyTaJO', 'images/users/user_6907beb0c3fcb4.93981450.PNG', 'usuario'),
+(11, 'Ana', 'ana@gmail.com', '$2y$10$6iHMVEh1gN87LnhECQq85.wE1T.h9ZxgeUSL1wOL8KufURRHhztz6', NULL, 'usuario'),
+(13, 'katia', 'katia@gmail.com', '$2y$10$pbhi3OJ/EBMkmjIVG2DI0.GV4.6cyiUIfXEF4HTQ7V.vS2yBzRl72', 'images/users/user_690989663e2a90.38383010.jpg', 'usuario');
+
+-- --------------------------------------------------------
+-- Tabela: servico
+-- --------------------------------------------------------
+
+CREATE TABLE `servico` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `titulo` varchar(100) NOT NULL,
+  `descricao` text NOT NULL,
+  `foto` varchar(255) DEFAULT NULL,
+  `preco` double(6,2) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+INSERT INTO `servico` (`id`, `titulo`, `descricao`, `foto`, `preco`) VALUES
+(2, 'Perfume Lindoo', 'Muito perfumadooo', 'images/product/produto_6907c8630ffb21.97081360.webp', 40.00),
+(5, 'Boss', 'Marcante', 'images/product/produto_690975ce671d27.10812113.png', 50.00),
+(6, 'Irresistible', 'Irresistivél', 'images/product/produto_6909760282e837.06445743.jpg', 60.00),
+(7, 'Perfume Lindoo', 'bom', 'images/product/produto_69098a4aa2f139.42170871.jpg', 300.00);
+
+-- --------------------------------------------------------
+-- Tabela: contato
+-- --------------------------------------------------------
+
+CREATE TABLE `contato` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `mensagem` text NOT NULL,
+  `data_envio` timestamp NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+INSERT INTO `contato` (`id`, `nome`, `email`, `mensagem`, `data_envio`) VALUES
+(1, 'Ana', 'ana@gmail.com', 'Seu trabalho é incrível!', '2025-11-04 03:45:07'),
+(3, 'katia', 'katia@gmail.com', 'incrivel', '2025-11-04 05:06:42');
+
+-- --------------------------------------------------------
+-- Tabela: compras
+-- --------------------------------------------------------
+
+CREATE TABLE `compras` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_usuario` int(11) NOT NULL,
+  `id_servico` int(11) NOT NULL,
+  `data_compra` datetime NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `id_usuario` (`id_usuario`),
+  KEY `id_servico` (`id_servico`),
+  CONSTRAINT `compras_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id`),
+  CONSTRAINT `compras_ibfk_2` FOREIGN KEY (`id_servico`) REFERENCES `servico` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+INSERT INTO `compras` (`id`, `id_usuario`, `id_servico`, `data_compra`) VALUES
+(1, 11, 6, '2025-11-04 01:25:14'),
+(2, 11, 6, '2025-11-04 01:30:48'),
+(3, 11, 6, '2025-11-04 01:43:52'),
+(4, 11, 5, '2025-11-04 01:44:29'),
+(5, 13, 5, '2025-11-04 02:05:38');
+
+COMMIT;
